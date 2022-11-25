@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="Stylesheet" href="./css/index.css" />
+    <title>Agenda cultural</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark ">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-light" href="#">AGENDA CULTURAL DE <span class="red">CA</span><span
+                        class="yellow">TA</span><span class="red">LU</span><span class="yellow">NYA</span></a>
+                <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Sel.lecciona categoria
+                            </a>
+                            <ul class="dropdown-menu  text-bg-dark" id="byTopic">
+                                <li><a class="dropdown-item text-warning" href="#">familiar</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Concert</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Patrimoni</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Teatre</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Festival</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Mostra</a></li>
+                                <li><a class="dropdown-item text-warning" href="#">Espectacle</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div id="div-map" class="row">
+                <div id="map" class="m-auto oculto"></div>
+            </div>
+        </div>
+        </div>
+        <article class="container-fluid ">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-3 text-center text-white">AGENDA CULTURAL</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h2 class="display-5 text-center text-white">EVENTS<span id="categoria"></span></h2>
+                </div>
+            </div>
+
+            <div class="row mt-5 me-auto ms-auto" id="resultado">
+
+            </div>
+
+        </article>
+
+
+    </main>
+    <footer>
+        <nav class="navbar bg-success fixed-bottom">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-brand mb-0 h1 text-white ">EXERCICI 6 PART 2- M6-DAW---faci DOBLE CLICK PER SORTIR DEL MAPA.</span>
+            </div>
+        </nav>
+    </footer>
+
+    <template id="card-template">
+        <div class="card border-warning bg-primary col-4" id="ok" style="width: 18rem;">
+            <img src="" class="card-img-top" id="img-template" alt="...">
+            <div class="card-body">
+                <h5 class="card-title" id="name"></h5>
+                <h6 class="card-title" id="date"></h6>
+                <p class="card-text" id="descrip"></p>
+                <P class="card-text" id="price"><span>€</span></P>
+                <a href="" id="button" class="btn btn-default">Más info</a>
+
+            </div>
+        </div>
+
+    </template>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#fac77b;
+}
+#map { 
+  
+   height:100vh;
+   width:100vw;
+    position:absolute;
+    right:auto;
+    z-index:1;
+    border:3px solid rgb(29, 205, 245); 
+    background:#333;  
+}
+.oculto{
+   top:-100vh;  
+}
+.visible{
+  top:0;
+}
+.yellow{
+    color:yellow;
+   
+}
+.red{
+color:#f11;
+}
+article{
+
+    min-height:100vh;
+   
+}
+nav div a, a{
+    color:#ddd;
+    text-decoration:none; 
+}
+nav div a:hover,a:hover{
+    color:orange;
+    text-decoration:double;
+}
+h1,h2{
+    text-shadow: 2px 2px blue;
+
+}
+.card{
+   
+   margin:3%; 
+    box-shadow: 2px 2px  7px 4px #666;
+}
+.card:hover{
+    box-shadow: 3px 3px 7px 6px #333;
+    
+}
+.btn:hover { 
+    transform:scale(1.2);
+    border:2px solid #ddd;
+}
