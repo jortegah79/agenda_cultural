@@ -48,13 +48,18 @@ h1,h2{
 .card{
    
    margin:3%; 
-    box-shadow: 2px 2px  7px 4px #666;
+    box-shadow: 2px 2px  7px 4px #444;
 }
 .card:hover{
     box-shadow: 3px 3px 7px 6px #333;
-    
+    transform:scale(1.010)
+}
+.btn{
+  
+    box-shadow: 1px 1px 2px 2px #666;
 }
 .btn:hover { 
-    transform:scale(1.2);
-    border:2px solid #ddd;
+    
+    transform:scale(1.2); 
+    box-shadow: 1px 1px 4px 3px #333;
 }
