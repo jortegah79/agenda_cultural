@@ -10,6 +10,13 @@ function init() {
         get_data(URL, tipo);
 
     });
+    get_data(URL);
+    let select2 = document.getElementById("byTopic2").addEventListener("click", (e) => {
+        let tipo = e.target.textContent;
+        get_data(URL, tipo);
+
+    });
+
 
 
 }
@@ -132,54 +139,3 @@ function imagen_aleatoria(tipo) {
 
        return `./img/${name}`;
 }
-
-
-/******************************************************************Esto es para fleatJS */
-//var map = L.map('map').setView([40.711172,0.577423], 18);
-
-
-/*var marker = L.marker([40.711172,0.577423]).addTo(map);
-/*
-
-var circle = L.circle([51.508, -0.11], {
-    color: "#333",
-    fillColor: '#6699dd',
-    fillOpacity: 0.6,
-    radius: 800
-}).addTo(map);
-
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map);
-
-marker.bindPopup("<b>Hello world!The ninja programmer again!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
-
-
-
-var popup = L.popup()
-    .setLatLng([51.513, -0.09])
-    .setContent("I am a standalone popup.")
-    .openOn(map);
-
-
-    function onMapClick(e) {
-        alert("You clicked the map at " + e.latlng);
-    }
-    
-    map.on('click', onMapClick);
-
-    var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-}
-
-map.on('click', onMapClick);
-    */
