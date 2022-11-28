@@ -3,7 +3,6 @@ document.addEventListener("load", init());
 
 function init() {
 
-
     const URL = "https://analisi.transparenciacatalunya.cat/resource/rhpv-yr4f.json";
     get_data(URL);
     let select = document.getElementById("byTopic").addEventListener("click", (e) => {
@@ -38,16 +37,14 @@ function show_data(data, tipo) {
     
     array= array.sort((a, b) => Date.parse(b['data_inici']) - Date.parse(a['data_inici']));
     array = Array.from(array).filter(el=>el['subt_tol'].includes(tipo));
-    
-    console.log(array)
-   
+  
     array.forEach((el, i) => {
 
         if (new Date(el['data_inici']).getFullYear() < (new Date().getFullYear()) + 2 && new Date(el['data_inici']).getMonth() >= (new Date().getMonth()-2)) {
 
             let link = document.createElement("a");
             link.href = "#";
-            link.classList.add("btn", "btn-info");
+            link.classList.add("btn", "btn-info","mb-3");
             link.textContent = "Más info";
             link.addEventListener("click", (e) => muestra_mapa(el));
 
@@ -77,7 +74,7 @@ function show_data(data, tipo) {
 
             let img = document.createElement("img");
             img.classList.add("card-img-top");
-            img.src = `./img/${foto_aleatoria()}`;
+            img.src = imagen_aleatoria(el['subt_tol']);
             img.alt = el['denominaci'];
 
             let div_card = document.createElement("div");
@@ -124,9 +121,16 @@ function reinicia_lista(){
     div_resultado.replaceWith(div);
     
 }
-function foto_aleatoria() {
-    let arr_fotos = ['cine.jpg', 'cine2.jpg', 'concierto.jpg', 'concierto2.jpg', 'concierto3.jpg', 'concierto4.jpg', 'musica1.jpg', 'navidad.jpg', 'popular.jpg', 'popular2.jpg', 'teatro.jpg', 'teatro2.jpg', 'teatro3.jpg', 'teatro4.jpg'];
-    return arr_fotos[Math.floor(Math.random() * 14)];
+function imagen_aleatoria(tipo) {
+     let array=['Concert','Espectacle','Familiar','Festival','Mostra','Patrimoni','Teatre'];
+     let index=array.findIndex(el=>{
+        if(tipo==undefined)return -1;
+        return tipo.includes(el);
+    });
+    let num=Math.ceil(Math.random() * 4);
+    let name=index==-1?"NO_FOTO"+num+".jpg":array[index]+num+".jpg";
+
+       return `./img/${name}`;
 }
 
 
