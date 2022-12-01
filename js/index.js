@@ -102,7 +102,7 @@ function show_data(data, tipo) {
 function muestra_mapa(evento) {
     let citiArray = evento['comarca_i_municipi'].split("/");
 
-    let ciutat = citiArray[citiArray.length - 1]; console.log(ciutat)
+    let ciutat = citiArray[citiArray.length - 1]; 
     document.getElementById("map").classList.add("visible");
     let map = L.map('map').setView([evento.latitud, evento.longitud], 25);
 
@@ -114,10 +114,16 @@ function muestra_mapa(evento) {
     let marker = L.marker([evento.latitud, evento.longitud]).addTo(map);
     marker.bindPopup(`<h5>${evento['denominaci']}</h5><h6>${ciutat}
     </h6><p>${evento['adre_a']}</p>`).openPopup();
-    document.getElementById("map").addEventListener("dblclick", () => {
 
-        document.getElementById("map").classList.remove("visible");
-        location.reload();
+    document.getElementById("map").addEventListener("dblclick", () => {
+        
+        let div_map=document.getElementById("div-map");
+        let map=document.getElementById("map");           
+        div_map.removeChild(map);     
+        let div=document.createElement("div");
+        div.setAttribute("id","map");
+        div.classList.add("m-auto","oculto"); 
+        div_map.appendChild(div);
     })   
 }
 function reinicia_lista(){
