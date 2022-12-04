@@ -115,6 +115,14 @@ function muestra_mapa(evento) {
     marker.bindPopup(`<h5>${evento['denominaci']}</h5><h6>${ciutat}
     </h6><p>${evento['adre_a']}</p>`).openPopup();
 
+    var popup = L.popup()
+    .setLatLng([evento.latitud,evento.longitud])
+    .setContent(`
+    <h4>${evento['denominaci']}</h4>
+    <h5>${ciutat}</h5><h6>${evento['adre_a']}</h6>
+    <p><b>Doble click</b> sobre el mapa per tancar</p>`)
+    .openOn(map);
+
     document.getElementById("map").addEventListener("dblclick", () => {
         
         let div_map=document.getElementById("div-map");
@@ -124,6 +132,7 @@ function muestra_mapa(evento) {
         div.setAttribute("id","map");
         div.classList.add("m-auto","oculto"); 
         div_map.appendChild(div);
+        
     })   
 }
 function reinicia_lista(){
